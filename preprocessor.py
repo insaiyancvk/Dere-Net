@@ -40,7 +40,7 @@ class PreProcessor():
 
     def test_transformer(self):
         return transforms.Compose([
-            transforms.Resize([self.n, self.n]),
+            transforms.Resize([self.size, self.size]),
             transforms.ToTensor(),
             transforms.Normalize(
                 mean = (self.mean, self.mean, self.mean),
