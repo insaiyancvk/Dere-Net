@@ -18,18 +18,18 @@ TODO:
 '''
 
 # some image processing tools
-import cv2
 import numpy as np
-import os, random, json
+import os, json, warnings
+warnings.filterwarnings("ignore")
 
 # the G
 import torch
-import torchvision
+# import torchvision
 
 # again some data loading, preprocessing tools
-from torch.utils.data import DataLoader
-import torchvision.transforms as transformers
-import torchvision.datasets as datasets
+# from torch.utils.data import DataLoader
+# import torchvision.transforms as transformers
+# import torchvision.datasets as datasets
 
 # Neural network, optimizer, loss calculator
 import torch.nn as nn
@@ -84,18 +84,23 @@ preprocessor = PreProcessor(
 train_loader = preprocessor.train_loader(
    train_root = FOLDERS["TRAIN"]
 )
-# image, label = iter(train_loader).next()
-# print(image.shape, label.shape)
+
+test_loader = preprocessor.test_loader(
+   test_root = FOLDERS["TEST"]
+)
 
 
 # TODO: Check if dirs in FOLDERS exist. Create if they don't. ✅
+exist = False
 for key in FOLDERS:
    if not os.path.isdir(FOLDERS[key]):
       print(key,"directory doesn't exist. Creating.")
       os.mkdir(FOLDERS[key])
       print(key,"directory created.")
    else:
-      print(key, "exists")
+      exist = True
+if exist:
+   print("\nAll directories exist/created\n")
 
 
 
@@ -146,36 +151,88 @@ class NeuralNetwork(nn.Module):
         return x
 
 MODEL = NeuralNetwork()
-optimizer = optim.SGD(MODEL.parameters, LR, MOMENTUM)
+optimizer = optim.SGD(MODEL.parameters(), LR, MOMENTUM)
 
-def epoch(model, train_loader, loss_func, optim, device):
+epoch_loss = 0
+epoch_accuracy = 0
+
+def epoch(model, test_loader ,train_loader, loss_func, optim, device):
 
    train_loss_vals = []
    train_accuracy_vals = []
    test_loss_vals = []
    test_accuracy_vals = []
 
-   batch_loss = 0
-   batch_accuracy = 0
-   epoch_loss = 0
-   epoch_accuracy = 0
+   train_batch_loss = 0
+   train_batch_accuracy = 0
 
    model = model.to(device)
+
+   print("\n\t\tTraining the batch... \n")
+
    for image, label in tqdm(train_loader):
 
       optim.zero_grad()
       
       output = model(image.to(device))
       
-      loss = LOSS_FUNC(
+      loss = loss_func(
          output,
          label.to(device)
          )
+      
       loss.backward()
       optim.step()
 
-      train_loss_vals.append(loss.cpu().item())
-      batch_loss += loss/len(train_loader)
-   
+      accuracy = np.average(
+            np.argmax(
+               output.cpu().detach().numpy(), axis=1) == label.cpu().detach().numpy()
+         )
 
-   pass
+      train_loss_vals.append(loss.cpu().item()) # training loss for graph
+      train_batch_loss += loss/len(train_loader) # training average loss
+      train_accuracy_vals.append(accuracy) # training accuray for graph
+      train_batch_accuracy += accuracy/len(train_loader) # training average accuracy
+   
+   print("\n\t\tValidating the batch... \n")
+
+   for image, label in tqdm(test_loader):
+
+      output = model(image.to(device))
+
+      loss = LOSS_FUNC(
+         output,
+         label.to(device)
+      )
+
+      accuracy = np.average(
+         np.argmax(
+            output.cpu().detach().numpy(), axis=1) == label.cpu().detach().numpy()
+         )
+
+      test_loss_vals.append(loss.cpu().item()) # testing loss for graph
+      test_accuracy_vals.append(accuracy) # testing accuracy for graph
+
+   return (
+
+      # TRAIN LOSS
+      train_loss_vals, # list
+      train_batch_loss, # float
+
+      # TRAIN ACCURACY
+      train_accuracy_vals, # list
+      train_batch_accuracy, # float
+
+      # TEST LOSS, ACCURACY
+      test_loss_vals, # list
+      test_accuracy_vals # list
+   )
+
+epoch_one = epoch(MODEL, test_loader, train_loader, LOSS_FUNC, optimizer, DEVICE)
+
+print(
+   "(Training) batch loss: ", epoch_one[1],"\n"
+   "(Validation) batch loss: ", epoch_one[4]/len(epoch_one[4]),"\n"
+   "(Training) batch accuracy: ", epoch_one[3], "\n",
+   "(Validation) batch accuracy: ", epoch_one[5]/len(epoch_one[5]),"\n"
+)
