@@ -89,6 +89,8 @@ test_loader = preprocessor.test_loader(
    test_root = FOLDERS["TEST"]
 )
 
+print("\n", DEVICE, "activated.\n")
+print("Total number of epochs: ", EPOCH)
 
 # TODO: Check if dirs in FOLDERS exist. Create if they don't. ✅
 exist = False
@@ -170,7 +172,7 @@ def epoch(model, test_loader ,train_loader, loss_func, optim, device):
 
    print("\n\t\tTraining the batch... \n")
 
-   for image, label in tqdm(train_loader):
+   for image, label in tqdm(train_loader, ncols=100):
 
       optim.zero_grad()
       
@@ -196,7 +198,7 @@ def epoch(model, test_loader ,train_loader, loss_func, optim, device):
    
    print("\n\t\tValidating the batch... \n")
 
-   for image, label in tqdm(test_loader):
+   for image, label in tqdm(test_loader, ncols=100):
 
       output = model(image.to(device))
 
@@ -232,7 +234,7 @@ epoch_one = epoch(MODEL, test_loader, train_loader, LOSS_FUNC, optimizer, DEVICE
 
 print(
    "(Training) batch loss: ", epoch_one[1],"\n"
-   "(Validation) batch loss: ", epoch_one[4]/len(epoch_one[4]),"\n"
+   "(Validation) batch loss: ", sum(epoch_one[4])/len(epoch_one[4]),"\n"
    "(Training) batch accuracy: ", epoch_one[3], "\n",
-   "(Validation) batch accuracy: ", epoch_one[5]/len(epoch_one[5]),"\n"
+   "(Validation) batch accuracy: ", sum(epoch_one[5])/len(epoch_one[5]),"\n"
 )
