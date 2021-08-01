@@ -33,6 +33,13 @@ I'll be listing what all I worked on.
     - Later you also need to collect the loss and accuracy values and plot them for all the epochs so that depending on the performance we can fine tune the hyper parameters like Learning Rate, Momentum, batch size, more transformations to data and finally the NN architecture itself if needed.
 4. So after experimenting with LR, batch size, momentum, filters, epochs and the architecture itself, here are some graphs of loss and accuracy that I saved after each experiment.
 
-*insert all the graphs*
+![](./assets/15epoch(.0015LR).jpg)
+![](./assets/15epochLR015.jpg)
+![](./assets/20epochLR001.jpg)
+![](./assets/20epochLR15.jpg)
+![](./assets/64bat20epochLR0151.png)
+![](./assets/64bat20epochLR015.jpg)
+![](./assets/64bat20epochLR0151.jpg)
+![](./assets/64bat20epochLR035.jpg)
 
 5. As of right now, I decided to use ResNet-15 and it's other variants since it is one of the best architectures in ImageNet so it should be good at feature extraction and hence expecting an improvement in performance.
