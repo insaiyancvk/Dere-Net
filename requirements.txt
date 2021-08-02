@@ -1,5 +1,5 @@
 setuptools
 gradio
-https://download.pytorch.org/whl/cpu/torch-1.9.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
-https://download.pytorch.org/whl/cpu/torchvision-0.10.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torch-1.9.0.post2-cp37-cp37m-linux_x86_64.whl
+torchvision==0.10.0
 Pillow
