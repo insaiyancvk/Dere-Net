@@ -1,11 +1,27 @@
-# Dere-Net
-A classifier that classifies persona (dere) of waifus using deep neural netowrks
+# Dere Net
 
-But what are Dere types? Check this dere chart
+[![](https://img.shields.io/badge/heroku-deployed-green)](https://derenet.herokuapp.com/)
 
-![](https://i.pinimg.com/originals/9b/eb/87/9beb870c74adb42c917301563066597b.jpg)
+A classifier that classifies persona (dere) of waifus using deep neural netowrks.
 
-So obviously you must be thinking, how can a neural network classify the persona based on the images? Well it doesn't give proper results. So keeping that in mind, I just used this dataset to learn more about CNNs and Deep learning :)
+Here are some classifications on my waifus from the [app](https://derenet.herokuapp.com)
+
+<div>
+<img src="./assets/demo1.png" width=800px>
+<img height="10" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
+<img src="./assets/demo2.png" width=800px>
+</div>
+<img height="25" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
+
+---
+
+## But what are Dere types? Check this dere chart
+<div>
+<img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
+</div>
+<img src="https://i.pinimg.com/originals/9b/eb/87/9beb870c74adb42c917301563066597b.jpg" height=500px>
+
+So you must be thinking, how can a neural network classify a persona based on the images? Well it doesn't give exact results, just play around it's fun :). And keeping that in mind, I used this dataset to learn more about CNNs and Deep learning with PyTorch :)
 
 But the [dataset](https://www.kaggle.com/jahelsantiagoleon/female-anime-characters-anime-dataset) had only 7 Deres, them being:
 - Dandere
@@ -16,27 +32,12 @@ But the [dataset](https://www.kaggle.com/jahelsantiagoleon/female-anime-characte
 - Deredere
 - Yandere
 
-Here are some predictions from [colab](https://colab.research.google.com/github/insaiyancvk/Dere-Net/blob/main/Dere_net_colab.ipynb) (if you watched the anime that these characters belong to, then you'll know the correct dere):
-
-<div>
-<img src="./assets/erina.jpeg" width=266px>
-<img src="./assets/hancock.jpeg" width=266px>
-<img src="./assets/hinata.png" width=266px>
-<img src="./assets/mikasa.jpeg" width=266px>
-<img src="./assets/rin.png" width=266px>
-<img src="./assets/miku.png" width=266px>
-</div>
-
-TODO:
-- Use gradio and make a web UI.
-- Host it on heroku.
-
 [TL;DR](https://github.com/insaiyancvk/Dere-Net/blob/main/updates.md)
 
 My Model's best performance:
 
 ![](./assets/64bat20epochLR0151.png)
 
-ResNet18's performance on same dataset:
+ResNet18's performance on the dataset:
 
 ![](./assets/RESNET18.png)
