@@ -4,7 +4,6 @@ A classifier that classifies persona (dere) of waifus using deep neural netowrks
 But what are Dere types? Check this dere chart
 
 ![](https://i.pinimg.com/originals/9b/eb/87/9beb870c74adb42c917301563066597b.jpg)
-source: pinterest
 
 So obviously you must be thinking, how can a neural network classify the persona based on the images? Well it doesn't give proper results. So keeping that in mind, I just used this dataset to learn more about CNNs and Deep learning :)
 
@@ -19,14 +18,17 @@ But the [dataset](https://www.kaggle.com/jahelsantiagoleon/female-anime-characte
 
 Here are some predictions from [colab](https://colab.research.google.com/github/insaiyancvk/Dere-Net/blob/main/Dere_net_colab.ipynb) (if you watched the anime that these characters belong to, then you'll know the correct dere):
 
-![](./assets/erina.jpeg)
-![](./assets/hancock.jpeg)
-![](./assets/hinata.png)
-![](./assets/mikasa.jpeg)
-![](./assets/rin.png)
+<img src="./assets/erina.jpeg" width=65%>
+<img src="./assets/hancock.jpeg" width=65%>
+<img src="./assets/hinata.png" width=65%>
+<img src="./assets/mikasa.jpeg" width=65%>
+<img src="./assets/rin.png" width=65%>
 
+TODO:
+- Use gradio and make a web UI.
+- Host it on heroku.
 
-TL;DR (referring to updates.md)
+[TL;DR](https://github.com/insaiyancvk/Dere-Net/blob/main/updates.md)
 
 My Model's best performance:
 
