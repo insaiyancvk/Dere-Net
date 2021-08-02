@@ -1,6 +1,7 @@
 # Dere Net
 
 [![](https://img.shields.io/badge/heroku-deployed-green)](https://derenet.herokuapp.com/)
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/insaiyancvk/Dere-Net/blob/main/Dere_net_colab.ipynb)
 
 A classifier that classifies persona (dere) of waifus using deep neural networks.
 
