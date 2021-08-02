@@ -1,5 +1,6 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 setuptools
 gradio
-torch
-torchvision
+torch==1.9.0+cpu
+torchvision==0.10.0+cpu
 Pillow
