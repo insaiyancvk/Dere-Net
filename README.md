@@ -8,7 +8,7 @@ Here are some classifications on my waifus from the [app](https://derenet.heroku
 
 <div>
 <img src="./assets/demo1.png" width=800px>
-<img height="10" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
+<img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
 <img src="./assets/demo2.png" width=800px>
 </div>
 <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
