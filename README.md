@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/heroku-deployed-green)](https://derenet.herokuapp.com/)
 
-A classifier that classifies persona (dere) of waifus using deep neural netowrks.
+A classifier that classifies persona (dere) of waifus using deep neural networks.
 
 Here are some classifications on my waifus from the [app](https://derenet.herokuapp.com)
 
@@ -21,7 +21,7 @@ Here are some classifications on my waifus from the [app](https://derenet.heroku
 </div>
 <img src="https://i.pinimg.com/originals/9b/eb/87/9beb870c74adb42c917301563066597b.jpg" height=500px>
 
-So you must be thinking, how can a neural network classify a persona based on the images? Well it doesn't give exact results, just play around it's fun :). And keeping that in mind, I used this dataset to learn more about CNNs and Deep learning with PyTorch :)
+So you must be thinking, how can a neural network classify a persona based on the images? Well, it doesn't give exact results, just play around it's fun :). And keeping that in mind, I used this dataset to learn more about CNNs and Deep learning with PyTorch :)
 
 But the [dataset](https://www.kaggle.com/jahelsantiagoleon/female-anime-characters-anime-dataset) had only 7 Deres, them being:
 - Dandere
