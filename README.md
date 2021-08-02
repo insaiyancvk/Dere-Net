@@ -18,11 +18,13 @@ But the [dataset](https://www.kaggle.com/jahelsantiagoleon/female-anime-characte
 
 Here are some predictions from [colab](https://colab.research.google.com/github/insaiyancvk/Dere-Net/blob/main/Dere_net_colab.ipynb) (if you watched the anime that these characters belong to, then you'll know the correct dere):
 
-<img src="./assets/erina.jpeg" width=65%>
-<img src="./assets/hancock.jpeg" width=65%>
-<img src="./assets/hinata.png" width=65%>
-<img src="./assets/mikasa.jpeg" width=65%>
-<img src="./assets/rin.png" width=65%>
+<div>
+<img src="./assets/erina.jpeg" width=300px>
+<img src="./assets/hancock.jpeg" width=300px>
+<img src="./assets/hinata.png" width=300px>
+<img src="./assets/mikasa.jpeg" width=300px>
+<img src="./assets/rin.png" width=300px>
+</div>
 
 TODO:
 - Use gradio and make a web UI.
