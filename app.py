@@ -18,7 +18,7 @@ labels = [
 
 resnet = resnet18(pretrained=False)
 resnet.fc = nn.Linear(resnet.fc.in_features, len(labels))
-resnet.load_state_dict(torch.load('./assets/derenet18.pth'))
+resnet.load_state_dict(torch.load('./assets/derenet18.pth', map_location=torch.device('cpu')))
 transform = transforms.Compose([
     transforms.Resize([256,256]),
     transforms.ToTensor(),
