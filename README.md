@@ -8,9 +8,9 @@ A classifier that classifies persona (dere) of waifus using deep neural networks
 Here are some classifications on my waifus from the [app](https://derenet.herokuapp.com)
 
 <div>
-<img src="./assets/demo1.png" width=800px>
+<img src="https://raw.githubusercontent.com/insaiyancvk/Dere-Net/main/assets/demo1.png" width=800px>
 <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
-<img src="./assets/demo2.png" width=800px>
+<img src="https://raw.githubusercontent.com/insaiyancvk/Dere-Net/main/assets/demo2.png" width=800px>
 </div>
 <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
 
@@ -37,8 +37,8 @@ But the [dataset](https://www.kaggle.com/jahelsantiagoleon/female-anime-characte
 
 My Model's best performance:
 
-![](./assets/64bat20epochLR0151.png)
+![](https://raw.githubusercontent.com/insaiyancvk/Dere-Net/main/assets/64bat20epochLR0151.png)
 
 ResNet18's performance on the dataset:
 
-![](./assets/RESNET18.png)
+![](https://raw.githubusercontent.com/insaiyancvk/Dere-Net/main/assets/RESNET18.png)
