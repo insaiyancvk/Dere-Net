@@ -7,12 +7,7 @@ A classifier that classifies persona (dere) of waifus using deep neural networks
 
 Here are some classifications on my waifus from the [app](https://derenet.herokuapp.com)
 
-<div>
-<img src="https://raw.githubusercontent.com/insaiyancvk/Dere-Net/main/assets/demo1.png" width=800px>
-<img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
-<img src="https://raw.githubusercontent.com/insaiyancvk/Dere-Net/main/assets/demo2.png" width=800px>
-</div>
-<img height="25" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png">
+![](./assets/demo.gif)
 
 ---
 
