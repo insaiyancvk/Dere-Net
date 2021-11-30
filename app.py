@@ -24,6 +24,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 ])
+resnet.eval()
 
 def predict(img):
     img = Image.fromarray(img.astype('uint8'), 'RGB')
